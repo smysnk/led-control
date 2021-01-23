@@ -1,0 +1,23 @@
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/binary_sensor/garden/config" -m '{"name": "garden", "device_class": "motion", "state_topic": "homeassistant/binary_sensor/garden/state"}'
+
+
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "homeassistant/binary_sensor/garden/state" -m ON
+
+
+
+homeassistant/binary_sensor/garden/config
+{"name": "garden", "device_class": "motion", "state_topic": "homeassistant/binary_sensor/garden/state"}
+
+
+homeassistant/light/abc/config
+{"name": "abc", "schema": "json", "state_topic": "homeassistant/light/abc/state", "command_topic": "homeassistant/light/abc/set", "brightness": true, "brightness_scale": 4095, "hs": true, "rgb": true}
+
+{
+  "name": "backsplash",
+  "schema": "json",
+  "state_topic": `homeassistant/light/backsplash/state`,
+  "command_topic": `homeassistant/light/backsplash/set`,
+  "brightness": true,
+  "brightness_scale": 255,
+  "rgb": true
+}
